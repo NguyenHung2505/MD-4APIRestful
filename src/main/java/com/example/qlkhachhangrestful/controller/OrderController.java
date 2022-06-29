@@ -3,7 +3,6 @@ package com.example.qlkhachhangrestful.controller;
 import com.example.qlkhachhangrestful.model.Orderr;
 import com.example.qlkhachhangrestful.model.Product;
 import com.example.qlkhachhangrestful.service.IOrderIService;
-import com.example.qlkhachhangrestful.service.IProductIService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
+@CrossOrigin("*")
 @RequestMapping("/api/orders")
 public class OrderController {
     @Autowired

@@ -12,15 +12,16 @@ public class Orderr {
     private LocalDateTime createAt;
     private int totalPrice;
     private String customerName;
-
+    private long amount;
     public Orderr() {
     }
 
-    public Orderr(Long id, LocalDateTime createAt, int totalPrice, String customerName) {
+    public Orderr(Long id, LocalDateTime createAt, int totalPrice, String customerName, long amount) {
         this.id = id;
         this.createAt = createAt;
         this.totalPrice = totalPrice;
         this.customerName = customerName;
+        this.amount = amount;
     }
 
     public Long getId() {
@@ -53,5 +54,13 @@ public class Orderr {
 
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
+    }
+
+    public long getAmount() {
+        return amount;
+    }
+
+    public void setAmount(long amount) {
+        this.amount = amount;
     }
 }

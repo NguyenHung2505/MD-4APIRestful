@@ -3,42 +3,48 @@ package com.example.qlkhachhangrestful.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "orderdetail")
 public class OrderDetail {
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
-  private int quantity;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @ManyToOne
+    private Orderr orderr;
+    @ManyToOne
+    private Product product;
+    private int quantity;
 
-  @ManyToOne
-  private Product product;
+    public OrderDetail() {
+    }
 
-  @ManyToOne
-//  @JoinColumn(name = "product_orderId")
-  private Orderr orderr;
+    public Orderr getOrderr() {
+        return orderr;
+    }
 
-  public OrderDetail() {
-  }
+    public void setOrderr(Orderr orderr) {
+        this.orderr = orderr;
+    }
 
-  public OrderDetail(Long id, int quantity) {
-    this.id = id;
-    this.quantity = quantity;
-  }
+    public Product getProduct() {
+        return product;
+    }
 
-  public Long getId() {
-    return id;
-  }
+    public void setProduct(Product product) {
+        this.product = product;
+    }
 
-  public void setId(Long id) {
-    this.id = id;
-  }
+    public int getQuantity() {
+        return quantity;
+    }
 
-  public int getQuantity() {
-    return quantity;
-  }
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
-  public void setQuantity(int quantity) {
-    this.quantity = quantity;
-  }
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

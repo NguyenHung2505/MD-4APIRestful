@@ -10,6 +10,7 @@ import java.util.Optional;
 public class OrderDetailService implements IOrderDetailIService {
 @Autowired
     IOrderDtailRepository orderDtailRepository;
+
     @Override
     public List<OrderDetail> findAll() {
         return orderDtailRepository.findAll();
@@ -19,7 +20,6 @@ public class OrderDetailService implements IOrderDetailIService {
     public Optional<OrderDetail> findById(Long id) {
         return orderDtailRepository.findById(id);
     }
-
 
     @Override
     public void save(OrderDetail orderDetail) {
